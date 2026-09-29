@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  body {
+    background-color: #0284c7;
+    background-image: 
+      radial-gradient(ellipse at 50% -20%, #38bdf8 0%, #0284c7 30%, #0369a1 60%, #0f172a 85%, #020617 100%),
+      radial-gradient(circle at 50% 100%, #0284c7 0%, transparent 70%);
+    background-attachment: fixed;
+    color: #f8fafc;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+/* Custom Text Gradients */
+.gold-text-gradient {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FDE68A 30%, #F59E0B 70%, #92400E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.9));
+}
+
+/* Ship Swaying Keyframes */
+@keyframes shipSway {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(-1.5deg); }
+}
+
+.animate-ship-sway {
+  animation: shipSway 5s ease-in-out infinite;
+}
+
+/* Wave Keyframes */
+@keyframes waveMove {
+  0% { transform: translateX(0px); }
+  50% { transform: translateX(-25px); }
+  100% { transform: translateX(0px); }
+}
+
+.animate-wave-move {
+  animation: waveMove 8s ease-in-out infinite;
+}
+
+/* Custom Scrollbars for Smooth Product Swiping */
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(2, 6, 23, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.4);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.8);
+}
+
+/* Utility to hide scrollbars for sleek mobile touch swiping */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
